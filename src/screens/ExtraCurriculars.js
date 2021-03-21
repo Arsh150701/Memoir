@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-export default function NotificationsScreen() {
+export default function ExtraCurriculars() {
     return (
         <View style = {styles.container}>
-            <Text>For fuck's sake</Text>
+            <Text>masti</Text>
         </View>
     )
 }

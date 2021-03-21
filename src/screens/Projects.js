@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native'
 export default function Projects() {
     return (
         <View style = {styles.container}>
-            <Text>For fuck's sake</Text>
+            <Text>ruko sabar karo</Text>
         </View>
     )
 }
