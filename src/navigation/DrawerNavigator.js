@@ -16,7 +16,6 @@ import DrawerInfoCard from '../components/DrawerInfoCard'
 const Drawer = createDrawerNavigator()
 
 function CustomDrawerContent(props) {
-    console.log(props)
     return (
         <DrawerContentScrollView {...props}>
             <DrawerInfoCard/>

@@ -8,8 +8,8 @@ export default function InfoCard() {
         <ImageBackground style={styles.cover} source={require("../assets/images/cover3.jpg")}>
                  <Image style={styles.dp} source={require("../assets/images/dp.jpg")}/>
                  <View style={styles.info}>
-                     <Text style = {{fontSize:24, fontWeight: 'bold'}}>Akshat Srivastava</Text>
-                     <Text style = {{fontSize: 18, marginTop: 5}}>Android developer & Writer</Text>
+                     <Text style = {{fontSize:24, fontWeight: 'bold'}}>Akshat{"\n"}Srivastava</Text>
+                     <Text style = {{fontSize: 18, marginTop: 5}}>Android developer{"\n"}& Writer</Text>
                 </View>
         </ImageBackground>
     )
