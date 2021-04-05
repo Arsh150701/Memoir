@@ -19,8 +19,6 @@ const styles = StyleSheet.create({
     cover: {
         flex: 0.35,
         flexDirection: 'row',
-        height: "100%",
-        width: "100%",
         alignItems: 'center',
     },
     dp: {
