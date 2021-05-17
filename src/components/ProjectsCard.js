@@ -1,11 +1,20 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Linking,
+  TouchableOpacity,
+} from 'react-native';
 import {color} from 'react-native-reanimated';
 
 export default function ProjectsCard(props) {
   return (
-    <View style={styles.card}>
-      <Image style={styles.icon} source={{uri: props.iconURL}} />
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => Linking.openURL(props.githubURL)}>
+      <Image style={styles.icon} source={{uri: `${props.iconURL}?raw=true`}} />
       <View style={styles.info}>
         <Text style={styles.projectName}>{props.projectName}</Text>
         <Text style={styles.projectType}>{props.projectType}</Text>
@@ -25,7 +34,7 @@ export default function ProjectsCard(props) {
           <Text style={styles.underDevelopment}>Under Development</Text>
         )}
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
@@ -33,14 +42,17 @@ const styles = StyleSheet.create({
   card: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#ADD8E688',
+    backgroundColor: '#ADDFFF',
     padding: 15,
     alignItems: 'center',
+    marginTop: 4,
+    marginHorizontal: 4,
+    borderRadius: 25,
   },
   icon: {
     width: 130,
     height: 130,
-    resizeMode: 'contain',
+    resizeMode: 'stretch',
   },
   info: {
     flex: 1,

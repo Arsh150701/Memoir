@@ -8,19 +8,16 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import type {Node} from 'react';
-import {
-  Button,
-  View,
-} from 'react-native';
 
-import { NavigationContainer } from '@react-navigation/native';
-import NavigationFlow from './src/navigation'
-
+import {NavigationContainer} from '@react-navigation/native';
+import NavigationFlow from './src/navigation';
+import PD from './src/screens/ProjectDetails';
 
 const App: () => Node = () => {
   return (
+    // <PD />
     <NavigationContainer>
-      <NavigationFlow/>
+      <NavigationFlow />
     </NavigationContainer>
   );
 };
