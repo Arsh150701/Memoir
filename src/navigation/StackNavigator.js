@@ -1,10 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import ProjectDetails from '../screens/ProjectDetails';
+import ProjectsCard from '../components/ProjectsCard';
+import Projects from '../screens/Projects';
+
+const Stack = createStackNavigator();
 
 export default function StackNavigator() {
   return (
-    <View>
-      <Text></Text>
-    </View>
+    <Stack.Navigator headerMode="none" initialRouteName="Projects">
+      <Stack.Screen name="Projects" component={Projects} />
+      <Stack.Screen name="ProjectCard" component={ProjectsCard} />
+      <Stack.Screen name="ProjectDetails" component={ProjectDetails} />
+    </Stack.Navigator>
   );
 }

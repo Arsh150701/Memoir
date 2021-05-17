@@ -1,19 +1,14 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  Linking,
-  TouchableOpacity,
-} from 'react-native';
-import {color} from 'react-native-reanimated';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 export default function ProjectsCard(props) {
+  const navigation = useNavigation();
+
   return (
     <TouchableOpacity
       style={styles.card}
-      onPress={() => Linking.openURL(props.githubURL)}>
+      onPress={() => navigation.navigate('ProjectDetails', {id: props.id})}>
       <Image style={styles.icon} source={{uri: `${props.iconURL}?raw=true`}} />
       <View style={styles.info}>
         <Text style={styles.projectName}>{props.projectName}</Text>

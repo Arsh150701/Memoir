@@ -1,9 +1,6 @@
-import React from 'react'
-import { View, Text } from 'react-native'
-import Drawer from './DrawerNavigator'
+import React from 'react';
+import Drawer from './DrawerNavigator';
 
 export default function NavigationFlow() {
-    return (
-        <Drawer/>
-    )
+  return <Drawer />;
 }

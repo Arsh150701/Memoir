@@ -3,8 +3,9 @@ import {StyleSheet, Text, View, Image, ScrollView, Linking} from 'react-native';
 import ProjectsCard from '../components/ProjectsCard';
 import PROJECTS_DATA from '../assets/data/ProjectsInfo';
 
-export default function ProjectDetails() {
-  id = 0;
+export default function ProjectDetails(route, navigation) {
+  id = route.route.params.id;
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.introView}>

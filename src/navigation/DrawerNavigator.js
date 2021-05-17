@@ -8,7 +8,8 @@ import {
 
 import HomeScreen from '../screens/HomeScreen';
 import ExtraCurriculars from '../screens/ExtraCurriculars';
-import MyProjects from '../screens/Projects';
+// import MyProjects from '../screens/Projects';
+import ProjectsStack from '../navigation/StackNavigator';
 import FunSection from '../screens/FunSection';
 import BlogPeek from '../screens/BlogPeek';
 import MySpotify from '../screens/MySpotify';
@@ -50,13 +51,14 @@ export default function DrawerNavigator() {
         width: screenDimension.width * 0.75,
       }}>
       <Drawer.Screen name="Home" component={HomeScreen} />
-      <Drawer.Screen name="My Projects" component={MyProjects} />
+      <Drawer.Screen name="My Projects" component={ProjectsStack} />
+      {/* <Drawer.Screen name="My Projects" component={MyProjects} /> */}
       {/* <Drawer.Screen name="Extra Curriculars" component={ExtraCurriculars} /> */}
       {/* <Drawer.Screen name="Sneak peek onto my blog" component={BlogPeek} /> */}
       <Drawer.Screen name="Fun Section" component={FunSection} />
       <Drawer.Screen name="Good Music (my spotify)" component={MySpotify} />
       <Drawer.Screen name="Why I made this app?" component={ReasonToMake} />
-      <Drawer.Screen name="Don't like the theme?" component={ThemeSelector} />
+      {/* <Drawer.Screen name="Don't like the theme?" component={ThemeSelector} /> */}
     </Drawer.Navigator>
   );
 }

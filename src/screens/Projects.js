@@ -1,5 +1,5 @@
 import React from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet} from 'react-native';
 import Card from '../components/ProjectsCard';
 import PROJECTS_DATA from '../assets/data/ProjectsInfo';
 import ProjectsIntro from '../components/ProjectsIntro';
@@ -7,6 +7,7 @@ import ProjectsIntro from '../components/ProjectsIntro';
 export default function Projects() {
   const renderItem = ({item}) => (
     <Card
+      id={item.id}
       projectName={item.projectName}
       projectType={item.projectType}
       iconURL={item.iconURL}
