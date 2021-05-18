@@ -22,7 +22,11 @@ export default function ProjectsCard(props) {
           }}>
           Languages used:
         </Text>
-        <Text style={styles.langUsed}>{props.langUsed}</Text>
+        <Text>
+          {props.langUsed.map((each, id) => (
+            <Text style={styles.langUsed}> {each}</Text>
+          ))}
+        </Text>
         {props.completed == true ? (
           <Text style={styles.completed}>Completed</Text>
         ) : (

@@ -2,7 +2,7 @@ const projectMeta = [
   {
     id: 0,
     projectName: 'Hygeia (SDP)',
-    projectType: 'Android project',
+    projectType: 'Android Studio',
     iconURL:
       'https://github.com/devanshagar783/Summer-Design-Project/blob/master/app/src/main/res/mipmap-hdpi/hygeia_icon.png',
     githubURL: 'https://github.com/devanshagar783/Summer-Design-Project',
@@ -38,7 +38,7 @@ const projectMeta = [
       },
     ],
     futureScope: {
-      status: false,
+      status: true,
       id: 2,
     },
   },
@@ -70,34 +70,34 @@ const projectMeta = [
       id: 0,
     },
   },
-  // {
-  //   id: 2,
-  //   projectName: '',
-  //   projectType: '',
-  //   iconURL:
-  //     'https://github.com/devanshagar783/Summer-Design-Project/blob/master/app/src/main/res/mipmap-hdpi/hygeia_icon.png?raw=true',
-  //   githubURL: 'https://github.com/Arsh150701/HYGEIA',
-  //   completed: false,
-  //   langUsed: ['Java', 'XML'],
-  //   desc: '',
-  //   ssURL: ['', '', ''],
-  //   authors: [
-  //     {
-  //       id: 0,
-  //       name: 'Akshat Srivastava',
-  //       githubURL: 'https://github.com/Arsh150701',
-  //     },
-  //     {
-  //       id: 1,
-  //       name: 'Devansh Agarwal',
-  //       githubURL: 'https://github.com/devanshagar783',
-  //     },
-  //   ],
-  //   futureScope: {
-  //     status: false,
-  //     id: 0,
-  //   },
-  // },
+  {
+    id: 2,
+    projectName: 'Hygeia',
+    projectType: 'Android Studio',
+    iconURL:
+      'https://github.com/devanshagar783/Summer-Design-Project/blob/master/app/src/main/res/mipmap-hdpi/hygeia_icon.png?raw=true',
+    githubURL: 'https://github.com/Arsh150701/HYGEIA',
+    completed: false,
+    langUsed: ['Java', 'XML'],
+    desc: '',
+    ssURL: ['', '', ''],
+    authors: [
+      {
+        id: 0,
+        name: 'Akshat Srivastava',
+        githubURL: 'https://github.com/Arsh150701',
+      },
+      {
+        id: 1,
+        name: 'Devansh Agarwal',
+        githubURL: 'https://github.com/devanshagar783',
+      },
+    ],
+    futureScope: {
+      status: false,
+      id: 0,
+    },
+  },
   //   {
   //     id: 3,
   //     projectName: '',
