@@ -152,6 +152,12 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('memoir_key.keystore')
+            storePassword 'memoirkeystore'
+            keyAlias 'memoir_alias'
+            keyPassword 'memoirkeystore'
+        }
     }
     buildTypes {
         debug {

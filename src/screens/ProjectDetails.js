@@ -66,7 +66,7 @@ export default function ProjectDetails(route) {
             <Text
               style={[
                 styles.info,
-                {backgroundColor: '#ADD8E666', borderRadius: 10},
+                {backgroundColor: '#ADD8E666', borderRadius: 10, padding: 5},
               ]}>
               {PROJECTS_DATA[id].desc}
             </Text>
