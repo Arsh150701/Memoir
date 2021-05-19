@@ -6,14 +6,13 @@ import {
   Image,
   ScrollView,
   Linking,
-  Modal,
-  TouchableOpacity,
   Pressable,
   Dimensions,
 } from 'react-native';
 import ProjectsCard from '../components/ProjectsCard';
 import PROJECTS_DATA from '../assets/data/ProjectsInfo';
 import {set} from 'react-native-reanimated';
+import Modal from 'react-native-modal';
 
 export default function ProjectDetails(route) {
   const [state, setstate] = useState({modalVisibility: false, modalImage: ''});
@@ -64,32 +63,47 @@ export default function ProjectDetails(route) {
 
           <Text style={styles.infoType}>Description</Text>
           {PROJECTS_DATA[id].desc != '' ? (
-            <Text style={styles.info}>{PROJECTS_DATA[id].desc}</Text>
+            <Text
+              style={[
+                styles.info,
+                {backgroundColor: '#ADD8E666', borderRadius: 10},
+              ]}>
+              {PROJECTS_DATA[id].desc}
+            </Text>
           ) : (
             <Text style={styles.info}>
               Description for this project is not available.
             </Text>
           )}
 
-          <Text style={styles.infoType}>Screenshots</Text>
-          <ScrollView style={styles.ssView} horizontal={true}>
-            {PROJECTS_DATA[id].ssURL.map((each, id) => (
-              <Pressable
-                onPress={() => {
-                  setstate({
-                    modalVisibility: !state.modalVisibility,
-                    modalImage: `${each}`,
-                  });
-                }}>
-                <Image style={styles.ss} source={{uri: `${each}?raw=true`}} />
-              </Pressable>
-            ))}
-          </ScrollView>
-
+          {PROJECTS_DATA[id].ssURL.length != 0 ? (
+            <>
+              <Text style={styles.infoType}>Screenshots</Text>
+              <ScrollView style={styles.ssView} horizontal={true}>
+                {PROJECTS_DATA[id].ssURL.map((each, id) => (
+                  <Pressable
+                    onPress={() => {
+                      setstate({
+                        modalVisibility: !state.modalVisibility,
+                        modalImage: `${each}`,
+                      });
+                    }}>
+                    <Image
+                      style={styles.ss}
+                      source={{uri: `${each}?raw=true`}}
+                    />
+                  </Pressable>
+                ))}
+              </ScrollView>
+            </>
+          ) : (
+            <Text></Text>
+          )}
           {PROJECTS_DATA[id].futureScope.status ? (
             <>
               <Text style={styles.infoType}>Future scope</Text>
               <ProjectsCard
+                id={PROJECTS_DATA[id].futureScope.id}
                 projectName={
                   PROJECTS_DATA[PROJECTS_DATA[id].futureScope.id].projectName
                 }
@@ -114,24 +128,33 @@ export default function ProjectDetails(route) {
             <Text></Text>
           )}
         </View>
-
-        <Modal
-          style={styles.modal}
-          animationType="fade"
-          transparent={false}
-          visible={state.modalVisibility}
-          onRequestClose={() => {
-            setstate({
-              modalVisibility: !state.modalVisibility,
-              modalImage: '',
-            });
-          }}>
-          <Image
-            style={styles.modalImage}
-            source={{uri: `${state.modalImage}?raw=true`}}
-          />
-        </Modal>
       </ScrollView>
+
+      <Modal
+        style={styles.modal}
+        animationIn="fadeIn"
+        animationOut="fadeOut"
+        swipeDirection="down"
+        transparent={true}
+        visible={state.modalVisibility}
+        onSwipeComplete={() => {
+          setstate({
+            modalVisibility: !state.modalVisibility,
+            modalImage: '',
+          });
+        }}
+        //onswipe up down right left
+        onRequestClose={() => {
+          setstate({
+            modalVisibility: !state.modalVisibility,
+            modalImage: '',
+          });
+        }}>
+        <Image
+          style={styles.modalImage}
+          source={{uri: `${state.modalImage}?raw=true`}}
+        />
+      </Modal>
     </>
   );
 }
@@ -196,7 +219,7 @@ const styles = StyleSheet.create({
   },
   modal: {},
   modalImage: {
-    margin: 10,
+    margin: -10,
     height: Dimensions.get('window').height - 20,
     width: Dimensions.get('window').width - 20,
     resizeMode: 'contain',
