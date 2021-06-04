@@ -3,10 +3,11 @@ import {createStackNavigator} from '@react-navigation/stack';
 import ProjectDetails from '../screens/ProjectDetails';
 import ProjectsCard from '../components/ProjectsCard';
 import Projects from '../screens/Projects';
+import FunSection from '../screens/FunSection';
 
 const Stack = createStackNavigator();
 
-export default function StackNavigator() {
+function ProjectsStack() {
   return (
     <Stack.Navigator headerMode="none" initialRouteName="Projects">
       <Stack.Screen name="Projects" component={Projects} />
@@ -15,3 +16,13 @@ export default function StackNavigator() {
     </Stack.Navigator>
   );
 }
+
+function FunSectionStack() {
+  return (
+    <Stack.Navigator headerMode="none" initialRouteName="Fun Section">
+      <Stack.Screen name="Fun Section" component={FunSection} />
+    </Stack.Navigator>
+  );
+}
+
+export {ProjectsStack, FunSectionStack};

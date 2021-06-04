@@ -3,6 +3,8 @@ import {FlatList, StyleSheet} from 'react-native';
 import Card from '../components/ProjectsCard';
 import PROJECTS_DATA from '../assets/data/ProjectsInfo';
 import ProjectsIntro from '../components/ProjectsIntro';
+import {useNavigation} from '@react-navigation/native';
+import Hamburger from '../components/Hamburger';
 
 export default function Projects() {
   const renderItem = ({item}) => (
@@ -16,10 +18,12 @@ export default function Projects() {
       githubURL={item.githubURL}
     />
   );
+  const navigation = useNavigation();
 
   return (
     <>
       <ProjectsIntro />
+      <Hamburger navigation={navigation} />
       <FlatList
         style={styles.FlatList}
         data={PROJECTS_DATA}

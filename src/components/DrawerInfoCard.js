@@ -8,14 +8,14 @@ export default function InfoCard() {
     <ImageBackground
       style={styles.cover}
       source={require('../assets/images/cover3.jpg')}>
-      <Image style={styles.dp} source={require('../assets/images/dp.jpg')} />
+      <View style={{width: '50%', alignItems: 'center'}}>
+        <Image style={styles.dp} source={require('../assets/images/dp.jpg')} />
+      </View>
       <View style={styles.info}>
         <Text style={{fontSize: 22, fontWeight: 'bold'}}>
           Akshat{'\n'}Srivastava
         </Text>
-        <Text style={{fontSize: 15, marginTop: 2}}>
-          Frontend developer{'\n'}& Writer
-        </Text>
+        <Text style={{fontSize: 15, marginTop: 2}}>Frontend developer</Text>
       </View>
     </ImageBackground>
   );
@@ -41,5 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'flex-start',
     marginLeft: 25,
+    width: '50%',
   },
 });
