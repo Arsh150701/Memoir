@@ -4,6 +4,9 @@ import ProjectDetails from '../screens/ProjectDetails';
 import ProjectsCard from '../components/ProjectsCard';
 import Projects from '../screens/Projects';
 import FunSection from '../screens/FunSection';
+import BlogPeek from '../screens/BlogPeek';
+import ExtraCurriculars from '../screens/ExtraCurriculars';
+import Poems from '../screens/Poems';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +24,9 @@ function FunSectionStack() {
   return (
     <Stack.Navigator headerMode="none" initialRouteName="Fun Section">
       <Stack.Screen name="Fun Section" component={FunSection} />
+      <Stack.Screen name="Poems" component={Poems} />
+      <Stack.Screen name="Blogs" component={BlogPeek} />
+      <Stack.Screen name="Extra Curriculars" component={ExtraCurriculars} />
     </Stack.Navigator>
   );
 }

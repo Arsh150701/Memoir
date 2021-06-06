@@ -27,8 +27,8 @@ export default function Projects() {
       <FlatList
         style={styles.FlatList}
         data={PROJECTS_DATA}
-        renderItem={renderItem}
         keyExtractor={item => item.id}
+        renderItem={renderItem}
       />
     </>
   );
